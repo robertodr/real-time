@@ -28,7 +28,7 @@ in
       gcc
       gfortran
       python3Full
-      python3Packages.docopt
+      python3Packages.click
       python3Packages.jupyter
       python3Packages.jupyterlab
       python3Packages.matplotlib

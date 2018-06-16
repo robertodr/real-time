@@ -1,0 +1,358 @@
+##############################################################################
+                              Environment setting
+##############################################################################
+
+ Job setting:
+    
+    Call arguments   are    --tdscf --inp=20_tdscf_y --scratch=/home/roberto/Scratch/respectscr 
+    Input file name   is   20_tdscf_y.inp
+    Binary  directory is   /home/roberto/Workspace/ReSpect-mDKS/build_master
+    Work    directory is   /home/roberto/Workspace/robertodr/real-time/ref/
+    Scratch directory is   /home/roberto/Scratch/respectscr/tmp9342.1tx9462b.roberto
+    Machine name      is   minazo
+    Output  file will be   /home/roberto/Workspace/robertodr/real-time/ref/20_tdscf_y.out_tdscf
+
+
+ System setting:
+
+    core file size          (blocks, -c) 0
+    data seg size           (kbytes, -d) unlimited
+    scheduling priority             (-e) 0
+    file size               (blocks, -f) unlimited
+    pending signals                 (-i) 62805
+    max locked memory       (kbytes, -l) 16384
+    max memory size         (kbytes, -m) unlimited
+    open files                      (-n) 1024
+    pipe size            (512 bytes, -p) 8
+    POSIX message queues     (bytes, -q) 819200
+    real-time priority              (-r) 0
+    stack size              (kbytes, -s) 8192
+    cpu time               (seconds, -t) unlimited
+    max user processes              (-u) 62805
+    virtual memory          (kbytes, -v) unlimited
+    file locks                      (-x) unlimited
+    omp_thread_limit:
+    omp_stacksize:
+    
+
+##############################################################################
+                               Program ReSpect
+##############################################################################
+
+
+:Version:   5.0.1 (2018)
+:Released:  unreleased
+:Web page:  www.respectprogram.org 
+:Copyright: The program binaries are freely distributed in the hope they become
+            useful. The experimental nature of the program means that authors accept
+            no responsibility for the correctness of results nor fitness for a particular purpose.
+
+
+
+=======
+Authors
+=======
+- Repisky Michal
+- Komorovsky Stanislav
+
+
+============
+Contributors
+============
+- Bast Radovan         - CMake build infrastructure
+- Di Remigio Roberto   - PCMSolver library
+- Ekstrom Ulf          - XCFun library
+- Kadek Marius         - real-time TDDFT library
+- Knecht Stefan        - MPI parallelization
+- Konecny Lukas        - real-time TDDFT library
+- Malkin Elena         - one-component molecular properties
+                       - finite size nucleus and magnetic moment models
+- Malkin-Ondik Irina   - Douglas-Kroll-Hess (DKH) Hamiltonians
+
+
+==========
+Leadership
+==========
+- Kaupp Martin
+- Malkina Olga L.
+- Malkin Vladimir G.
+- Ruud Kenneth
+
+
+===================
+Version information
+===================
+::
+
+ Branch        | master
+ Commit hash   | 636c48811
+ Commit author | Stano
+ Commit date   | Wed Jun 6 13:00:54 2018 +0200
+
+
+===================================
+Configuration and build information
+===================================
+::
+
+ Who compiled           | roberto
+ Compiled on server     | minazo
+ Operating system       | Linux-4.14.47
+ CMake version          | 3.10.2
+ CMake generator        | Unix Makefiles
+ CMake build type       | debug
+ Configuration time     | 2018-06-11 19:38:48.170518
+ Python version         | 3.6.4
+ Fortran compiler       | /nix/store/i78rbxp8bj786ykkjaxnd6sswf6v4b5c-gfortran-wrapper-7.3.0/bin/gfortran
+ Fortran compiler flags |  -ffloat-store -fcray-pointer -m64 -O0 -g -fbacktrace -Wuninitialized -Wconversion
+ C compiler             | /nix/store/gqg2vrcq7krqi9rrl6pphvsg81sb8pjw-gcc-wrapper-7.3.0/bin/gcc
+ C compiler flags       |  -std=c99 -DRESTRICT=restrict -DFUNDERSCORE=1 -DHAVE_NO_LSEEK64 -ffloat-store -Wno-unused -m64 -O0 -g3 -DDEBUG -Wall -Wextra -Winit-self -Wuninitialized -Wwrite-strings -Wno-sign-compare
+ C++ compiler           | /nix/store/gqg2vrcq7krqi9rrl6pphvsg81sb8pjw-gcc-wrapper-7.3.0/bin/g++
+ C++ compiler flags     |  -Wall -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused -fno-rtti -fno-exceptions -m64 -O0 -g3 -DDEBUG
+ Static linking         | False
+ MPI parallelization    | False
+ OMP parallelization    | False
+ Math libraries         | /nix/store/hhcqjcc6r1v3rn6hdi6ha76bx09s6fsl-atlas-3.10.2/lib/libatlas.a;/nix/store/shfnbiwvdpkq98vmpy9516fnv1bb3ryh-liblapack-3.4.1/lib/liblapack.a;/nix/store/hhcqjcc6r1v3rn6hdi6ha76bx09s6fsl-atlas-3.10.2/lib/libf77blas.a;/nix/store/hhcqjcc6r1v3rn6hdi6ha76bx09s6fsl-atlas-3.10.2/lib/libcblas.a;/nix/store/hhcqjcc6r1v3rn6hdi6ha76bx09s6fsl-atlas-3.10.2/lib/libatlas.a
+ Explicit libraries     | unknown
+
+
+
+
+============
+Runtime info
+============
+::
+
+ Non-parallel (sequential) calculation
+
+
+
+ Initial time 
+ ------------ 
+ 2018 June 12  12:49:20
+
+
+
+==========
+Input file
+==========
+::
+
+   > tdscf:
+   >   spectroscopy:    eas
+   >   solver:          magnus
+   >   time-steps:      20 x 0.005
+   >   maxiterations:   6
+   >   convergence:     1.0e-7
+   >   checkpoint:      3
+   >   field:
+   >     model:     delta
+   >     amplitude: 0.2
+   >     direction: 0.0 1.0 0.0
+
+
+Input processing
+----------------
+::
+
+ ... spectroscopy type: electron absorption (EAS)
+
+ ... equation of motion solver: magnus
+
+ ...           electronic time step:   5.00E-03
+     number of electronic time steps:       20
+
+ ... max. number of self-consistent microiterations:   6
+
+ ... microiteration threshold:  1.00E-07
+
+ ... checkpointing done every iteration block of size:        3
+
+ ... field model: DELTA           
+
+ ... field amplitude:  2.00E-01
+
+ ... field direction (x):  0.00E+00
+     field direction (y):  1.00E+00
+     field direction (z):  0.00E+00
+
+
+
+Atomic and Nuclear Constants
+----------------------------
+::
+
+ The data used in this calculation (unless changed from input) are from
+ the CODATA recommended values of the fundamental physical constants 2010
+ (online at http://physics.nist.gov/constants) and from the 2006 compilation
+ of the Particle Data Group (online at http://pdg.lbl.gov).
+ All values are in the SI-based atomic units unless stated otherwise.
+
+ Inverse fine-structure constant =   137.035999074000
+ Bohr radius [A]                 =     0.529177210920
+ Hartree energy [eV]             =    27.211385050000
+ Electric dipole moment [Debye]  =     2.541746363608
+
+ atom    label     Z    isotop    atomic mass       spin         g-value 
+ ----------------------------------------------------------------------- 
+  O        1       8      16       15.994915      0.000000      0.000000
+  H        2       1       1        1.007825      0.500000      5.585695
+  H        3       1       1        1.007825      0.500000      5.585695
+
+
+
+Molecular geometry [A]
+----------------------
+::
+
+ atom    label                 cartesian coordinates            
+ -------------------------------------------------------------- 
+  O        1         0.000000         0.000000         0.000000
+  H        2         0.000000         0.000000         0.940000
+  H        3         0.903870         0.000000        -0.258105
+
+
+
+Atomic orbital basis
+--------------------
+::
+
+ atom  label     prim    cont     orbital basis set details     
+ ---------------------------------------------------------------
+  O      1         26      26     [9s4p1d]  ucc-pvdz
+  H      2          7       7     [4s1p]    ucc-pvdz
+  H      3          7       7     [4s1p]    ucc-pvdz
+
+ Total number of           GTO shells =      24
+ Total number of spherical GTO functions =   40
+ Total number of cartesian GTO functions =   41
+
+
+
+ReSpect output (section TDSCF)
+==============================
+
+
+Time-domain SCF procedure (TDSCF)
+---------------------------------
+::
+
+
+  Time-domain setting
+  -------------------
+  spectroscopy:                                      EAS             
+  initial time:                                  0.000E+00
+  final   time:                                  1.000E-01
+  time step length:                              5.000E-03
+  number of time steps:                                 20
+  propagation restarting:                                F
+  checkpointing frequency:                               3
+  equation of motion solver:                        MAGNUS          
+  number of microiterations:                             6
+  microiteration convergence treshold:           1.000E-07
+  external field model:                              DELTA           
+  field strength:                                2.000E-01
+  field direction (x-coordinate):                0.000E+00
+  field direction (y-coordinate):                1.000E+00
+  field direction (z-coordinate):                0.000E+00
+
+
+  TwoFock setting (ERI)
+  ---------------------
+  number atoms:                                 3
+  number electrons:                            10
+  matrix dimension:                            41
+  number GTO shells:                           24
+  ERI classes (up to):                       LLLL
+  ERI screening threshold:             1.0000E-10
+  HF exchange scaling factor:          1.00000000
+  inverse fine-structure constant:   137.03599907
+
+
+
+  Gauge origin
+  X component    =   0.0955790371
+  Y component    =   0.0000000000
+  Z component    =   0.0721064616
+  Length         =   0.1197275830
+  Length [Debye] =   0.3043171487
+
+
+  Formulas for dipole moments:
+    total        = nuclear + static electronic + induced electronic
+    total static = nuclear + static electronic
+
+  Gauge origin independency:
+    Total energy                     (only for charge neutral molecules)
+    Total static dipole moment       (only for charge neutral molecules)
+    Induced electronic dipole moment (always)
+
+  Nuclear dipole moment
+  X component    =   0.7522763816
+  Y component    =   0.0000000000
+  Z component    =   0.5675301794
+  Length         =   0.9423429625
+  Length [Debye] =   2.3951967981
+
+  Total static dipole moment
+  X component    =   0.6526930401
+  Y component    =  -0.0000000000
+  Z component    =   0.4924026352
+  Length         =   0.8175992660
+  Length [Debye] =   2.0781299612
+
+
+                                                               Induced electronic dipole moment
+                                                     ----------------------------------------------------
+    Time step          Time             Energy                 X                  Y                  Z           Wtime   Iter.
+  ---------------   ---------      ----------------     --------------     --------------     --------------    -------  -----
+  Step EAS:     0      0.0000      -75.803025408814    -0.021143629439     0.000000000000    -0.015951104692    00:00.1    1
+  Step EAS:     1      0.0050      -75.803025408810    -0.021147431587     0.011247195603    -0.015953973093    00:00.4    4
+  Step EAS:     2      0.0100      -75.803025408821    -0.021154723774     0.022409144134    -0.015959474437    00:00.3    3
+  Step EAS:     3      0.0150      -75.803025408792    -0.021161492131     0.033397149141    -0.015964580598    00:00.3    3
+  Step EAS:     4      0.0200      -75.803025408754    -0.021169512899     0.044182214990    -0.015970631601    00:00.3    3
+  Step EAS:     5      0.0250      -75.803025408732    -0.021179665848     0.054759273882    -0.015978291158    00:00.3    3
+  Step EAS:     6      0.0300      -75.803025408748    -0.021192682444     0.065058763842    -0.015988111097    00:00.3    3
+  Step EAS:     7      0.0350      -75.803025408819    -0.021211125926     0.075009082227    -0.016002025166    00:00.3    3
+  Step EAS:     8      0.0400      -75.803025408960    -0.021232357049     0.084619421374    -0.016018042276    00:00.3    3
+  Step EAS:     9      0.0450      -75.803025409162    -0.021251132968     0.093924669899    -0.016032207147    00:00.3    3
+  Step EAS:    10      0.0500      -75.803025409394    -0.021269508201     0.102951539728    -0.016046069736    00:00.3    3
+  Step EAS:    11      0.0550      -75.803025409630    -0.021291749766     0.111747486837    -0.016062849147    00:00.3    3
+  Step EAS:    12      0.0600      -75.803025409850    -0.021317156703     0.120341070547    -0.016082016565    00:00.3    3
+  Step EAS:    13      0.0650      -75.803025410036    -0.021344700572     0.128734043806    -0.016102796119    00:00.3    3
+  Step EAS:    14      0.0700      -75.803025410172    -0.021373919040     0.136990860811    -0.016124839019    00:00.3    3
+  Step EAS:    15      0.0750      -75.803025410259    -0.021402323554     0.145221043919    -0.016146267860    00:00.3    3
+  Step EAS:    16      0.0800      -75.803025410313    -0.021430850965     0.153468119291    -0.016167789418    00:00.3    3
+  Step EAS:    17      0.0850      -75.803025410359    -0.021464187509     0.161729841044    -0.016192939059    00:00.3    3
+  Step EAS:    18      0.0900      -75.803025410412    -0.021502297521     0.170027732349    -0.016221689878    00:00.3    3
+  Step EAS:    19      0.0950      -75.803025410480    -0.021541311818     0.178378127461    -0.016251122905    00:00.3    3
+  Step EAS:    20      0.1000      -75.803025410571    -0.021580742235     0.186789515378    -0.016280869860    00:00.3    3
+
+
+  Average induced electronic dipole moment X:       -2.131E-02
+  Average induced electronic dipole moment Y:        1.040E-01
+  Average induced electronic dipole moment Z:       -1.608E-02
+  Average number of microiterations per time step:   3.050E+00
+  Average CPU time required per time step:          00:00.3  
+
+
+  Happy end!
+
+  To generate photoabsorption spectrum from this output, run "spectrum.py" in your installation build directory!!!
+
+
+
+ Final time 
+ ---------- 
+ 2018 June 12  12:49:27
+
+
+ Memory peak for process    0 is             0.409 MB
+
+
+ Normal termination of ReSpect program
+
+
+real	0m6.782s
+user	0m6.755s
+sys	0m0.014s

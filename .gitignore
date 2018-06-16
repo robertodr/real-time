@@ -102,3 +102,13 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# ReSpect files
+*.50
+*.50.backup
+*.inp
+*.molden
+*.npz
+*peaks.out
+*spectrum.out
+*.svg

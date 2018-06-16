@@ -1,0 +1,17 @@
+scf:
+  geometry:
+    O  0.000000  0.000000  0.000000
+    H  0.000000  0.000000  0.940000
+    H  0.903870  0.000000 -0.258105
+
+  method:         hf
+  initmo:         atomic
+  nc-model:       point
+  charge:         0
+  multiplicity:   1
+  maxiterations:  30
+  convergence:    1.e-7
+
+  basis:
+    H: ucc-pvdz
+    O: ucc-pvdz

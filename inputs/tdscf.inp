@@ -1,0 +1,11 @@
+tdscf:
+  spectroscopy:    eas
+  solver:          magnus
+  time-steps:      NSTEPS x 0.005
+  maxiterations:   6
+  convergence:     1.0e-7
+  checkpoint:      3
+  field:
+    model:     delta
+    amplitude: 0.2
+    direction: XYZXYZXYZ

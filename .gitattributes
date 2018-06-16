@@ -1,0 +1,9 @@
+ref/UO2_2+_magnus-delta_eq+pcm_x.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_y.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_x.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_z.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_eq+pcm_y.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_eq+pcm_z.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_pcm_x.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_pcm_y.out_tdscf filter=lfs diff=lfs merge=lfs -text
+ref/UO2_2+_magnus-delta_pcm_z.out_tdscf filter=lfs diff=lfs merge=lfs -text
